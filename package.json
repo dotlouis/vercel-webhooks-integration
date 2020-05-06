@@ -1,0 +1,22 @@
+{
+  "name": "vercel-webhooks-integration",
+  "version": "1.0.0",
+  "description": "Vercel integration to receive plateform events via webhooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotlouis/vercel-webhooks-integration.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dotlouis/vercel-webhooks-integration/issues"
+  },
+  "homepage": "https://github.com/dotlouis/vercel-webhooks-integration#readme",
+  "dependencies": {
+    "@zeit/integration-utils": "^0.6.4"
+  }
+}
