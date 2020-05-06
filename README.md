@@ -1,2 +1,2 @@
-# vercel-webhooks-integration
-Vercel integration to receive plateform events via webhooks
+# Webhooks platform events
+Vercel integration to receive platform events via webhooks

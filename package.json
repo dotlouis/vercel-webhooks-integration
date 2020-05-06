@@ -1,10 +1,11 @@
 {
   "name": "vercel-webhooks-integration",
   "version": "1.0.0",
-  "description": "Vercel integration to receive plateform events via webhooks",
+  "description": "Vercel integration to receive platform events via webhooks",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "now dev --listen 5005"
   },
   "repository": {
     "type": "git",
