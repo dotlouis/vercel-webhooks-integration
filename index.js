@@ -6,10 +6,6 @@ module.exports = withUiHook(async ({ payload, zeitClient }) => {
   const isWebhookSet =
     action === 'submit' || (action === 'view' && !!store.webhookData)
 
-  const integration = await zeitClient.fetchAndThrow(
-    `/v1/integrations/integration/${payload.integrationId}`,
-  )
-
   async function createHook(url) {
     return await zeitClient.fetchAndThrow(`/v1/integrations/webhooks`, {
       method: 'POST',
@@ -50,11 +46,12 @@ module.exports = withUiHook(async ({ payload, zeitClient }) => {
         } />
 				${
           isWebhookSet
-            ? html`<button action="remove">Remove</button>`
-            : html`<button action="submit">Add</button>`
+            ? // prettier-ignore
+              html`<Button action="remove">Remove</Button>`
+            : // prettier-ignore
+              html`<Button action="submit">Add</Button>`
         }
       </Box>
-      <P>App secret: <Code>${integration.secret}</Code></P>
       <Notice type="warn">
       To secure your webhook, you should check it comes from Vercel.
       See <Link target="blank" href="https://vercel.com/docs/api#integrations/webhooks/securing-webhooks">Securing Webhooks</Link>
