@@ -1,4 +1,4 @@
-const { withUiHook, htm } = require('@zeit/integration-utils')
+const { withUiHook, htm: html } = require('@zeit/integration-utils')
 
 module.exports = withUiHook(async ({ payload, zeitClient }) => {
   const { clientState, action } = payload
@@ -42,7 +42,7 @@ module.exports = withUiHook(async ({ payload, zeitClient }) => {
     await zeitClient.setMetadata(store)
   }
 
-  return htm`
+  return html`
 		<Page>
 			<Box>
 				<Input label="WebhookUrl" name="webhookUrl" value=${
@@ -50,8 +50,8 @@ module.exports = withUiHook(async ({ payload, zeitClient }) => {
         } />
 				${
           isWebhookSet
-            ? htm`<Button action="remove">Remove</Button>`
-            : htm`<Button action="submit">Add</Button>`
+            ? html`<button action="remove">Remove</button>`
+            : html`<button action="submit">Add</button>`
         }
       </Box>
       <P>App secret: <Code>${integration.secret}</Code></P>
